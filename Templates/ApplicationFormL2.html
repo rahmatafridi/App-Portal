@@ -1,0 +1,962 @@
+<html>
+<head>
+    <title>Online Application Form</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/App_Resources/js/autosize.min.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet" type="text/css" media="print">
+
+
+    <style type="text/css">
+
+        @media print {
+            div {
+                background-color: #F8F8F8 !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+                div .label {
+                    font-weight: 900;
+                    background-color: #fefefe !important;
+                    -webkit-print-color-adjust: exact;
+                }
+        }
+
+
+
+        @media print {
+
+            .form-style-10 {
+                width: 900px;
+                /* padding: 30px;*/
+                margin: 4px auto;
+                background: #FFF;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+                -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+                -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+            }
+
+                .form-style-10 .inner-wrap {
+                    padding: 10px;
+                    background: #F8F8F8;
+                    border-radius: 6px;
+                    margin-bottom:  5px;
+                }
+
+                .form-style-10 h1 {
+                    background: #2A88AD;
+                    padding: 20px 30px 15px 30px;
+                    margin: -30px -30px 30px -30px;
+                    border-radius: 10px 10px 0 0;
+                    -webkit-border-radius: 10px 10px 0 0;
+                    -moz-border-radius: 10px 10px 0 0;
+                    color: #fff;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+                    font: normal 30px 'Bitter', serif;
+                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    border: 1px solid #257C9E;
+                }
+
+                    .form-style-10 h1 > span {
+                        display: block;
+                        margin-top: 2px;
+                        font: 13px Arial, Helvetica, sans-serif;
+                    }
+
+                .form-style-10 label {
+                    display: block;
+                    font: 13px Arial, Helvetica, sans-serif;
+                    color: #888;
+                    margin-bottom: 5px;
+                }
+
+                .form-style-10 input[type="text"],
+                .form-style-10 input[type="date"],
+                .form-style-10 input[type="datetime"],
+                .form-style-10 input[type="email"],
+                .form-style-10 input[type="number"],
+                .form-style-10 input[type="search"],
+                .form-style-10 input[type="time"],
+                .form-style-10 input[type="url"],
+                .form-style-10 input[type="password"],
+                .form-style-10 textarea,
+                .form-style-10 select {
+                    display: block;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    width: 100%;
+                    padding: 8px;
+                    border-radius: 6px;
+                    -webkit-border-radius: 6px;
+                    -moz-border-radius: 6px;
+                    border: 2px solid #fff;
+                    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                }
+
+                .form-style-10 .heading_section {
+                    font: normal 20px 'Bitter', serif;
+                    color: #2A88AD;
+                    margin-bottom: 5px;
+                }
+
+                    .form-style-10 .heading_section span {
+                        background: #2A88AD;
+                        padding: 5px 10px 5px 10px;
+                        position: absolute;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        border: 4px solid #fff;
+                        font-size: 14px;
+                        margin-left: -45px;
+                        color: #fff;
+                        margin-top: -3px;
+                    }
+
+                .form-style-10 input[type="button"],
+                .form-style-10 input[type="submit"] {
+                    background: #2A88AD;
+                    padding: 8px 20px 8px 20px;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    color: #fff;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+                    font: normal 30px 'Bitter', serif;
+                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    border: 1px solid #257C9E;
+                    font-size: 15px;
+                }
+
+                    .form-style-10 input[type="button"]:hover,
+                    .form-style-10 input[type="submit"]:hover {
+                        background: #2A6881;
+                        -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                        -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                        box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                    }
+
+                .form-style-10 .privacy-policy {
+                    float: right;
+                    width: 250px;
+                    font: 12px Arial, Helvetica, sans-serif;
+                    color: #4D4D4D;
+                    margin-top: 10px;
+                    text-align: right;
+                }
+        }
+    </style>
+
+
+    <style type="text/css">
+        .form-style-10 {
+            width: 900px;
+            padding: 30px;
+            margin: 40px auto;
+            background: #FFF;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+            -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+            -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+        }
+
+            .form-style-10 .inner-wrap {
+                padding: 10px;
+                background: #F8F8F8;
+                border-radius: 6px;
+                margin-bottom: 5px;
+            }
+
+            .form-style-10 h1 {
+                background: #2A88AD;
+                padding: 20px 30px 15px 30px;
+                margin: -30px -30px 30px -30px;
+                border-radius: 10px 10px 0 0;
+                -webkit-border-radius: 10px 10px 0 0;
+                -moz-border-radius: 10px 10px 0 0;
+                color: #fff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+                font: normal 30px 'Bitter', serif;
+                -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                border: 1px solid #257C9E;
+            }
+
+                .form-style-10 h1 > span {
+                    display: block;
+                    margin-top: 2px;
+                    font: 13px Arial, Helvetica, sans-serif;
+                }
+
+            .form-style-10 label {
+                display: block;
+                font: 13px Arial, Helvetica, sans-serif;
+                color: #888;
+                margin-bottom: 15px;
+            }
+
+            .form-style-10 input[type="text"],
+            .form-style-10 input[type="date"],
+            .form-style-10 input[type="datetime"],
+            .form-style-10 input[type="email"],
+            .form-style-10 input[type="number"],
+            .form-style-10 input[type="search"],
+            .form-style-10 input[type="time"],
+            .form-style-10 input[type="url"],
+            .form-style-10 input[type="password"],
+            .form-style-10 textarea,
+            .form-style-10 select {
+                display: block;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border: 2px solid #fff;
+                box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+            }
+
+            .form-style-10 .heading_section {
+                font: normal 20px 'Bitter', serif;
+                color: #2A88AD;
+                margin-bottom: 5px;
+            }
+
+                .form-style-10 .heading_section span {
+                    background: #2A88AD;
+                    padding: 5px 10px 5px 10px;
+                    position: absolute;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    border: 4px solid #fff;
+                    font-size: 14px;
+                    margin-left: -45px;
+                    color: #fff;
+                    margin-top: -3px;
+                }
+
+            .form-style-10 input[type="button"],
+            .form-style-10 input[type="submit"] {
+                background: #2A88AD;
+                padding: 8px 20px 8px 20px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                color: #fff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+                font: normal 30px 'Bitter', serif;
+                -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                border: 1px solid #257C9E;
+                font-size: 15px;
+            }
+
+                .form-style-10 input[type="button"]:hover,
+                .form-style-10 input[type="submit"]:hover {
+                    background: #2A6881;
+                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                }
+
+            .form-style-10 .privacy-policy {
+                float: right;
+                width: 250px;
+                font: 12px Arial, Helvetica, sans-serif;
+                color: #4D4D4D;
+                margin-top: 10px;
+                text-align: right;
+            }
+
+
+
+        label {
+            color: #000;
+            font-size: 20px;
+            font-weight: 900;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+        }
+        .dv_logo {
+            padding: 5px !important;
+            display: inline-block !important;
+            display: -webkit-inline-box !important;
+            background-color: white !important;
+        }
+    </style>
+
+
+
+    <script type="text/javascript">
+
+        //var course_level =  [!lit_App_job_officeuse1_CourseLevel!] ;
+        var course_title =  [!lit_App_officeuse1_CourseTitle!];
+        // alert(course_level);
+        document.getElementById("tbl_level3").style.visibility="hidden";
+        document.getElementById("tbl_level4").style.visibility="hidden";
+        document.getElementById("tbl_level5").style.visibility="hidden";
+
+        switch (course_level) {
+            case 3:
+                document.getElementById("tbl_level3").style.visibility="visible";
+                $(".tbl_level3").show();
+                $(".tbl_level4").hide();
+                $(".tbl_level5").hide();
+                break;
+            case 4:
+                document.getElementById("tbl_level4").style.visibility="visible";
+                $(".tbl_level3").hide();
+                $(".tbl_level4").show();
+                $(".tbl_level5").hide();
+                break;
+            case 5:
+                document.getElementById("tbl_level5").style.visibility="visible";
+                $(".tbl_level3").hide();
+                $(".tbl_level4").hide();
+                $(".tbl_level5").show();
+                break;
+            default:
+                document.getElementById("tbl_level5").style.visibility="visible";
+                $(".tbl_level3").hide();
+                $(".tbl_level4").hide();
+                $(".tbl_level5").show();
+                break;
+
+        }
+        //$(document).ready(function () {
+        //    $('.tbl_level3').hide();
+        //    $('.tbl_level4').hide();
+        //    $('.tbl_level5').hide();
+        //});
+
+        $(document).ready(function () {
+           // var course_level = 5;
+        //    alert(course_level);
+            switch (course_level) {
+                case 3:
+                    $(".tbl_level3").show();
+                    $(".tbl_level4").hide();
+                    $(".tbl_level5").hide();
+                    break;
+                case 4:
+                    $(".tbl_level3").hide();
+                    $(".tbl_level4").show();
+                    $(".tbl_level5").hide();
+                    break;
+                case 5:
+                    $(".tbl_level3").hide();
+                    $(".tbl_level4").hide();
+                    $(".tbl_level5").show();
+                    break;
+                default:
+                    $(".tbl_level3").hide();
+                    $(".tbl_level4").hide();
+                    $(".tbl_level5").show();
+                    break;
+
+            }
+        });
+
+
+        $(document).ready(function () {
+            //autoresize text areas
+           // autosize($('textarea'));
+             autosize(document.querySelectorAll('textarea'));
+        });
+
+    </script>
+
+
+
+
+</head>
+<body>
+    <div class="form-style-10" style="height: 105px; padding-top:10px">
+        <div style="float: left; margin-top: -10px">
+            <img src="/App_Resources/images/Logos/Access Skills Logo.png" width="300">
+        </div>
+        <div style="float: right; margin-top: 20px">
+            <img src="/App_Resources/images/Logos/ESF Updated.png">
+        </div>
+    </div>
+    <div class="form-style-10">
+        <h1>
+            Online Application Form<span>
+                Course:
+                <script>document.write(course_title);</script>
+            </span>
+        </h1>
+
+        <form>
+            <div class="heading_section"><span>1</span>About You</div>
+
+
+
+            <div class="inner-wrap row">
+                <div class="col-2 col-xs-2">
+                    <label>Title <input type="text" name="field1" class="" value="[!lit_App_Title!]" /></label>
+                </div>
+                <div class="col-5 col-xs-5">
+                    <label>First Name (s) <input type="text" name="field2" value="[!lit_App_FirstName!]" /></label>
+                </div>
+                <div class="col-5 col-xs-5">
+                    <label>Surname <input type="text" class="autosizing" name="field_3" value="[!lit_App_Surname!]" /></label>
+                </div>
+                <div class="col-4 col-xs-4">
+                    <label>Gender <input type="text" name="field_4" value="[!lit_App_Gender!]" /></label>
+                </div>
+                <div class="col-4 col-xs-4">
+                    <label>Date of birth <input type="text" name="field_5" value="[!lit_App_DOB!]" /></label>
+                </div>
+                <div class="col-4 col-xs-4">
+                    <label>National Insurance Number <input type="text" name="field_6" value="[!lit_App_NI!]" /></label>
+                </div>
+                <div class="col-8 col-xs-8">
+                    <label>Permanent Address <textarea name="field_7" rows="5">[!lit_App_PermAddress1!]</textarea></label>
+                </div>
+                <div class="col-4 col-xs-4">
+                    <label>Post Code <textarea name="field_8">[!lit_App_PermPostCode!]</textarea></label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>Email Address <textarea name="field_9">[!lit_App_Email!]</textarea></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>Home Telephone Number <textarea name="field_10">[!lit_App_HomeTel!]</textarea></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>Mobile Number <textarea name="field_11">[!lit_App_Mobile!]</textarea></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>Nationality <input type="text" name="field_12" value="[!lit_App_Nationality!]" /></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>If not British, please state country of legal residency <textarea name="field_13">[!lit_App_LegalResidency!]</textarea></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>Have you lived in the UK continuously over the last three years? <input type="text" name="field_14" value="[!lit_App_IsLivedEULast3Years!]" /></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>If no please state date of entry into the UK <input type="text" name="field_15" value="[!lit_App_LivedEntryDate!]" /></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        If you are a Non EU or UK National, can you please confirm how long you have lived in the UK?
+                        <input type="text" name="field_16" value="[!lit_App_NonEUUKHowLongLiveInUK!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Are you an EU/EEA national, arrived in the UK before 31/12/2020?
+                        <input type="text" name="field_16" value="[!lit_App_EUEEANational!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Which of the following status applies to you?
+                        <input type="text" name="field_16" value="[!lit_App_EUEEAStatus!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>Ethnicity <input type="text" name="field_17" value="[!lit_App_Ethnicity!]" /></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>Religion <input type="text" name="field_18" value="[!lit_App_Religion!]" /></label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Length of time at your home address?
+                        <input type="text" name="field_19" value="[!lit_App_LengthOfAddress!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you have any pre-planned absences? If yes can you please provide dates?
+                        <textarea name="field_20">[!lit_App_PrePlannedAbsence!]</textarea>
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>Your circumstances <textarea name="field_21">[!lit_App_Circumstance!]</textarea></label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Do you have a disability and/or learning difficulty?
+                        <input type="text" name="field_22" value="[!lit_App_AnyDisability!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+
+                    <label>
+                        If yes please state your primary disability and/or learning difficulty
+                        <input type="text" name="field_23" value="[!lit_App_AnyDisabilityPrimary!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Please select any other disabilities and/or learning difficulties
+                        <textarea name="field_24">[!lit_App_AnyDisabilitySecondaries!]</textarea>
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Are there any other reasons why you may need learning support e.g. mental health difficulty, medical condition?
+                        <input type="text" name="field_25" value="[!lit_App_NeedLearningSupport!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you have a Learner Support Plan (S139a) or an Education, Health and Care plan?
+                        <input type="text" name="field_26" value="[!lit_App_HaveLearnerSupportProgram!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you have access to a computer or other SMART media device?
+                        <input type="text" name="field_28" value="[!lit_App_IsAccessToComputer!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you have access to Face time, Tango or Skype?
+                        <input type="text" name="field_29" value="[!lit_App_IsAccessToFaceTime!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you have an email account and are able to send and receive documents through this medium?
+                        <input type="text" name="field_30" value="[!lit_App_IsAccessToEmail!]" />
+                    </label>
+                </div>
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        Are you an owner or part owner of the business?
+                        <input type="text" name="field_31" value="[!lit_App_IsPartnerOfOwner!]" />
+                    </label>
+                </div>-->
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Are you familiar with e-portfolios and confident that you would be able to upload your assignments through this medium?
+                        <input type="text" name="field_32" value="[!lit_App_IsEPortoflioAware!]" />
+                    </label>
+                </div>
+
+
+            </div>
+
+            <div class="heading_section"><span>2</span>About Qualifications</div>
+            <div class="inner-wrap row">
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Prior level of achievement (please select your highest qualification achieved)
+                        <input type="text" name="field_33" value="[!lit_App_educ_HighestQual!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Have you achieved a GCSE in English A*-C
+                        <input type="text" name="field_34" value="[!lit_App_educ_IsGCSEEnglish!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Have you achieved a GCSE in Maths A*-C
+                        <input type="text" name="field_35" value="[!lit_App_educ_IsGCSEMath!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        If you answered no to the above but have an equivalent qualification please state what this is in the box.
+                        <input type="text" name="field_36" value="[!lit_App_educ_EquivalentQualification!]" />
+                    </label>
+                </div>
+                <div class="col-4 col-xs-4">
+                    <label>
+                        Are you enrolled at another institution?
+                        <input type="text" name="field_37" value="[!lit_App_educ_IsEnrolledOther!]" />
+                    </label>
+                </div>
+                <!--<div class="col-8 col-xs-8">
+                    <label>
+                        Please state previous school/college (if you left within the last 5 years)
+                        <input type="text" name="field_38" value="[!lit_App_educ_PreviousCollege!]" />
+                    </label>
+                </div>-->
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Please List any previous qualifications you have achieved including grade/level and date achieved (GCSE/GCE/CSE/NVQ/BTEC)
+                        <input type="text" name="field_39" value="[!lit_App_educ_PreviousQual!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        List any training received in the last 3 years include date taken [e.g. Health & Safety, Food Hygiene, Adult Protection, Moving & Handling, Customer Service, I.T., First Aid etc.]
+                        <input type="text" name="field_40" value="[!lit_App_educ_PreviousTraining!]" />
+                    </label>
+                </div>
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        Are you applying for an Advanced Learner Loan to fund your qualification?
+                        <input type="text" name="field_41" value="[!lit_App_educ_IsALLFund!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        If yes can you confirm if you have taken out an Advanced Learner before and specify the qualifications below?
+                        <input type="text" name="field_42" value="[!lit_App_educ_ALLFundQualDetails!]" />
+                    </label>
+                </div>-->
+
+            </div>
+
+
+            <div class="heading_section"><span>3</span>About Employer</div>
+            <div class="inner-wrap row">
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Company Name
+                        <input type="text" name="field_43" value="[!lit_App_emp_CompanyName!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Employment Start Date
+                        <input type="text" name="field_44" value="[!lit_App_emp_EmpoyementStartDate!]" />
+                    </label>
+                </div>
+                <div class="col-8 col-xs-8">
+                    <label>
+                        Workplace Address
+                        <textarea name="field_45" rows="5">[!lit_App_emp_WorkPlaceAddress!]</textarea>
+                    </label>
+                </div>
+                <div class="col-4 col-xs-4">
+                    <label>
+                        Post Code
+                        <input type="text" name="field_46" value="[!lit_App_emp_WorkPlacePostCode!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Telephone Number
+                        <input type="text" name="field_47" value="[!lit_App_emp_Tel!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Employer Contact Name (who you report to)
+                        <input type="text" name="field_48" value="[!lit_App_emp_ContactName!]" />
+                    </label>
+                    <label>
+
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Position
+                        <input type="text" name="field_49" value="[!lit_App_emp_Position!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Employer Email Address
+                        <input type="text" name="field_50" value="[!lit_App_emp_Email!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Business Sector
+                        <input type="text" name="field_51" value="[!lit_App_emp_BusinessSector!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Company Size
+                        <input type="text" name="field_52" value="[!lit_App_emp_CompanyEstablished!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        What are your usual hours of attendance? (include shift patterns if appropriate) and total working hours per week?
+                        <input type="text" name="field_53" value="[!lit_App_emp_WeeklyHours!]" />
+                    </label>
+                </div>
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        Are you self-employed?
+                        <input type="text" name="field_54" value="[!lit_App_emp_IsSelfEmployed!]" />
+                    </label>
+                </div>-->
+
+            </div>
+
+
+            <div class="heading_section"><span>4</span>About Job Roles</div>
+            <div class="inner-wrap row">
+                <div class="col-6 col-xs-6">
+                    <label>
+                        What is your job function:
+                        <input type="text" name="field_55" value="[!lit_App_job_JobFunction!]" />
+                    </label>
+                </div>
+                <div class="col-6 col-xs-6">
+                    <label>
+                        How long have you been in your current job role?
+                        <input type="text" name="field_56" value="[!lit_App_job_HowLongWorkingJob!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        How long have you been with working at your current employment
+                        <input type="text" name="field_57" value="[!lit_App_job_HowLongWorkingEmployer!]" />
+                    </label>
+                </div>
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        Do you have a current personal development plan?
+                        <input type="text" name="field_58 value="[!lit_App_job_HaveCurrentDevPlan!]" />
+                    </label>
+                </div>-->
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        Are you aware of the Fundamental Standards?
+                        <input type="text" name="field_59" value="[!lit_App_job_IsAwareFundamentalStd!]" />
+                    </label>
+                </div>-->
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        Do you require any further training and support to meet the needs and expectations of your role?
+                        <input type="text" name="field_60" value="[!lit_App_job_IsFurtherTrainingNeeded!]" />
+                    </label>
+                </div>-->
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Which pathway is most relevant to your place of work?
+                        <input type="text" name="field_61" value="[!lit_App_job_IsFurtherTrainingNeeded!]" />
+                    </label>
+                </div>
+
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you have a current Job Description?
+                        <input type="text" name="field_62" value="[!lit_App_job_HaveJobDescription!]" />
+                    </label>
+                </div>
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        What are your main duties and responsibilities on a day to day basis?
+                        <input type="text" name="field_63" value="[!lit_App_job_DailyMainDuties!]" />
+                    </label>
+                </div>-->
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        Explain what other positions/responsibilities you have had within the organisation OR any previous work experience.
+                        <input type="text" name="field_64" value="[!lit_App_job_OtherPositionResponsabilities!]" />
+                    </label>
+                </div>-->
+
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        What would you say are your strengths?
+                        <input type="text" name="field_65" value="[!lit_App_job_AboutYourStrenghts!]" />
+                    </label>
+                </div>-->
+                <!--<div class="col-12 col-xs-12">
+                    <label>
+                        What would you say are your areas for development?
+                        <input type="text" name="field_66" value="[!lit_App_job_AreasOfDevelopment!]" />
+                    </label>
+                </div>-->
+
+                <div class="col-6 col-xs-6">
+
+                    <label>
+                        Do you provide care or support to the service user?*
+                        <input type="text" name="field_70" value="[!lit_App_job_70!]" />
+
+                    </label>
+                </div>
+             
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Do you assist with eating and drinking?
+                        <input type="text" name="field_68" value="[!lit_App_job_AssistEatingDrinking!]" />
+                    </label>
+                </div>
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you take part in personal care to include: Assisting and Moving and Maintain and monitor nutrition?
+                        <input type="text" name="field_69" value="[!lit_App_job_PersonalCareAssistingMoving!]" />
+                    </label>
+                </div>
+
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Promote health and wellbeing for the service users you support?
+                        <input type="text" name="field_71" value="[!lit_App_job_71!]" />
+                    </label>
+                </div>
+
+                
+
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Do you provide effective communication, where you're communicating clearly and responsibly?
+                        <input type="text" name="field_72" value="[!lit_App_job_72!]" />
+                    </label>
+                </div>
+
+                <div class="col-6 col-xs-6">
+                    <label>
+                        Are you involved in social activities with the service user?
+                        <input type="text" name="field_98" value="[!lit_App_job_SocialActivitieswithServiceUser!]" />
+                    </label>
+                </div>
+
+
+                <div class="col-12 col-xs-12">
+                    <label>
+                        Is your employer happy for a virtual workplace observation visit to take place?
+                        <input type="text" name="field_99" value="[!lit_App_job_AllowWorkplaceObsVisit!]" />
+                    </label>
+                </div>
+
+
+                <div class="col-12 col-xs-12">
+                    <label>
+                        I confirm I have a contract of employment.
+                        <input type="text" name="field_991" value="[!lit_App_job_Confirm16hrs!]" /> -
+                        <input type="text" name="field_993" value="[!lit_App_job_Confirm16hrsTitle!]" />
+                    </label>
+                </div>
+
+            </div>
+
+
+            <div class="heading_section"><span>P</span>Privacy Notice</div>
+            <div class="inner-wrap">
+
+                <label>
+                    You may be contacted after you have completed your programme of learning to establish your employed circumstances or if you have further training or education requirements.
+                    <br />
+
+                    <input type="checkbox" name="chk_mktg_ContactConsent" disabled value="" [!lit_App_mktg_ContactConsent!]>&nbsp;&nbsp;Yes
+                    &nbsp;&nbsp;<input type="checkbox" name="chk_mktg_ContactConsentNo" disabled value="" [!lit_App_mktg_ContactConsentNo!]>&nbsp;&nbsp;No
+                    &nbsp;&nbsp;<input type="checkbox" style="display:none" name="chk_mktg_ByPost" disabled value="" [!lit_App_mktg_ByPost!]>&nbsp;&nbsp;
+                    &nbsp;&nbsp;<input type="checkbox" style="display:none" name="chk_mktg_ByEmail" disabled value="" [!lit_App_mktg_ByEmail!]>&nbsp;&nbsp;
+                    &nbsp;&nbsp;<input type="checkbox" style="display:none" name="chk_mktg_ByPhone" disabled value="" [!lit_App_mktg_ByPhone!]>&nbsp;&nbsp;
+
+                    <br />
+                </label>
+
+            </div>
+
+            <div class="heading_section"><span>S</span>Signature</div>
+            <div class="inner-wrap row">
+                <label></label>
+                <p></p>
+
+                <div class="col-12 col-xs-12">
+                    <div class="col-6 col-xs-6">
+                        <p>Print Name: [!lit_PrintName!]</p><br />
+                        <p><img id="signature" height="70px" src='[!lit_app_signature!]' alt="signature.png" /></p>
+                    </div>
+                    <div class="col-6 col-xs-6">
+                        <p>Date: [!lit_App_Submit_Date!]</p><br />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="heading_section"><span>o</span>Office Use Only</div>
+
+            <div class="inner-wrap row">
+                <div class="col-3 col-xs-3">
+                    <label> Proof ID Seen <input type="text" name="field1" class="" value="[!lit_App_officeuse_IsEvidenceSeen!]" /></label>
+                </div>
+
+                <div class="col-3 col-xs-3">
+                    <label> ID Type <input type="text" name="field1" class="" value="[!lit_App_officeuse_ReferenceIdType!]" /></label>
+                </div>
+
+                <div class="col-3 col-xs-6">
+                    <label> Reference ID <input type="text" name="field1" class="" value="[!lit_App_officeuse_ReferenceId!]" /></label>
+                </div>
+                <!--<div class="col-3 col-xs-3">
+                    <label> Reference Date <input type="text" name="field1" class="" value="[!lit_App_officeuse_ReferenceDate!]" /></label>
+                </div>-->
+
+                <div class="col-12 col-xs-12">
+                    <div class="col-6 col-xs-6">
+                        <p>Access Skills  </p>
+                        <p><img id="signature_accessskills" height="60px" src='[!lit_app_signature_accessskills!]' alt="signature_accessskills.png" /></p>
+                    </div>
+                    <div class="col-6 col-xs-6">
+                        <p>Date: </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!--Starts For Logos-->
+            <div class="inner-wrap row" style="background-color: white !important;">
+
+                <div class="dv_logo">
+                    <img src="/App_Resources/images/Logos/Highfield logo.png" />
+                </div>
+                <div class="dv_logo">
+                    <img src="/App_Resources/images/Logos/pearson-edexcel-approved-centre_fw_3-300x225.png" />
+                </div>
+                <div class="dv_logo">
+                    <img src="/App_Resources/images/Logos/ILM-LOGO.jpg" />
+                </div>
+
+                <div class="dv_logo">
+                    <img src="/App_Resources/images/Logos/Endorsed provider (until Apr-19).jpg" />
+                </div>
+                <div class="dv_logo">
+                    <img src="/App_Resources/images/Logos/matrix.png" />
+                </div>
+
+                <div class="dv_logo">
+                    <img src="/App_Resources/images/Logos/Apprenticeship Logo.png" />
+                </div>
+                <div class="dv_logo">
+                    <img src="/App_Resources/images/Logos/ESF Updated.png" />
+                </div>
+            </div>
+            <!--Ends For Logos-->
+
+        </form>
+    </div>
+
+
+
+
+
+</body>
+<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet" />
+<link href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />-->
+
+</html>

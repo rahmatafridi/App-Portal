@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+using System.Data;
+using System.Web.Security;
+using System.Collections;
+using System.Configuration;
+
+
+public partial class testmail : System.Web.UI.Page
+{
+    private string redirUrl;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //if (true == Request.IsAuthenticated)
+        // {
+
+        // }
+
+
+
+
+
+    }
+    protected void show_notif(string str)
+    {
+        string js = "$.jGrowl('" + str.Replace("'", "\'") + "');";
+
+        Page.ClientScript.RegisterStartupScript(typeof(string), "jgrowlwarn", js, true);
+
+    }
+
+
+    protected void ResetPassword_Click(object sender, EventArgs e)
+    {
+
+        string groups = string.Empty;
+
+
+        DSP.BAL.ASPMail emailReminder = new DSP.BAL.ASPMail();
+        emailReminder.sTo = ConfigurationManager.AppSettings["cfg_portal_email_debug"];
+        emailReminder.sFrom = ConfigurationManager.AppSettings["cfg_portal_email_from"]; // "portal@wavetraining.co.uk";//
+        emailReminder.sSubject = " TEST MAIL ";
+
+        try
+        {
+            emailReminder.SendMail();
+
+        }
+        catch (Exception exx)
+        {
+            show_notif("error .");
+            return;
+        }
+
+        show_notif("An email has been sent .");
+        UserName.Text = "";
+
+    }
+
+    private string createCookie(string strUser, string groups)
+    {
+        string userDataString = groups;
+
+        HttpCookie authCookie = FormsAuthentication.GetAuthCookie(strUser, false);
+        FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+        FormsAuthenticationTicket newTicket = new FormsAuthenticationTicket(ticket.Version, ticket.Name, ticket.IssueDate, ticket.Expiration, ticket.IsPersistent, userDataString);
+
+        authCookie.Value = FormsAuthentication.Encrypt(newTicket);
+        authCookie.HttpOnly = true;
+        Response.Cookies.Add(authCookie);
+
+        return FormsAuthentication.GetRedirectUrl(strUser, false);
+    }
+
+
+}

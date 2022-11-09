@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="SiteMaster" %>
+<!DOCTYPE html>
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">--%>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Application Portal</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="description" content="Application portal" />
+    <meta name="keywords" content="Portal, cms, access skills, care, management system, development, expertise in development" />
+    <link rel="Shortcut Icon" href='<%# ResolveUrl ("~/App_Resources/images/favicon.ico") %>' />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+       
+    <link href='<%#ResolveUrl("~/App_Resources/bootstrap-3.3.1-dist/dist/css/bootstrap.css") %>' rel="stylesheet" />
+    <link href='<%#ResolveUrl("~/App_Resources/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css") %>' rel="stylesheet" />
+
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+
+            //$("#slider3").easySlider({
+            //    auto: true,
+            //    continuous: true,
+            //    numeric: true
+            //});
+
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="HeaderContainer" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <form id="Form1" runat="server">
+        <div class="FullWidth HeaderTop HeaderGrad clearfix">
+            <div class="container_24 clearfix Header">
+                <a id="A1" href="~" class="branding grid_11 alpha" runat="server"></a>
+                <div class="grid_13 UtilityMenu omega">
+                    <div class="info-area" runat="server" id="loggedinfo">
+                        <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                            <LoggedInTemplate>
+                                Logged as <span class="bold">
+                                    <asp:LoginName ID="HeadLoginName" runat="server" />
+                                </span>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                       
+                   <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Logout"
+                        LogoutPageUrl="~/Portal/Logout.aspx" />
+                </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="FullWidth ContentMain">
+            <div class="container_24 clearfix ContentArea">
+              
+                <div>
+                    <div class="temp breadCrumb clearfix">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server" CssClass="bc-container">
+                            <RootNodeStyle CssClass="first" />
+                            <NodeStyle />
+                            <CurrentNodeStyle CssClass="last" />
+                            <PathSeparatorStyle CssClass="bc-seperator" />
+                            <PathSeparatorTemplate>
+                            </PathSeparatorTemplate>
+                        </asp:SiteMapPath>
+                    </div>
+                    <asp:Literal runat="server" ID="ltlMessage" EnableViewState="false"></asp:Literal>
+                    <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <div class="FullWidth FooterMain ThemeGrad">
+            <div class="container_24 clearfix">
+                <div class="grid_14 clearfix eisk-info alpha suffix_1">
+                    <p class="grid_14 branding-x2 alpha" title="Portal">
+                    </p>
+                   
+                    <p>
+                        Copyright &copy; <%= System.DateTime.Now.Year %> <a href="https://www.AccessSkills.co.uk" target="_blank">Access Skills</a>
+                        <br />
+                         Quadrant Court, 49 Calthorpe Road, Birmingham, B15 1TH                    
+                    <br />
+                        Tel: 0121 510 2169 | Fax: 0845 363 6185 
+                     <br /><a href="https://www.accessskills.co.uk/privacy-notice" target="_blank">Privacy & Cookie Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+  
+
+    <script type="text/javascript" src='<%#ResolveUrl("~/App_Resources/bs/js/bootstrap.min.js")%>'></script>
+    </body>
+</html>

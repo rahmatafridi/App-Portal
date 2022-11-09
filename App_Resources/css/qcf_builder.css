@@ -1,0 +1,67 @@
+/*
+ * CSS for QCF Builder on the Portal
+ *
+ * Copyright 2012, AUTHOR: Yasar Qayyum  
+ */
+
+/* Layout helpers
+----------------------------------*/
+ 	/* QCF module */ 
+
+.qcf_always_panel {
+	PADDING-BOTTOM: 14px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; background-color: #6baff0; COLOR: white; FONT-SIZE:11px; PADDING-TOP: 14px
+}
+.qcf_always_panel A {
+	COLOR: #efefef;
+	font-style:normal;
+}
+.qcf_always_panel A:hover {
+	COLOR: white;
+	font-style:normal;
+}
+.curved {
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+behavior:url(../images/border-radius.htc);
+}
+div.img{
+	border:1px solid #fff;
+	background:url(karzzz.jpg) no-repeat;
+	color:red;
+	text-align:right;
+}
+  
+/* QCF */
+
+.qcf_txt_caption /*.ob_gridNavigationSeparator*/
+{
+font-family: Calibri;
+font-size: 11px;
+font-weight: Bold;
+/*	color:#429BBF;
+font-weight: normal;
+text-decoration:none;
+cursor: default;
+padding-left: 2px;
+padding-right: 2px;*/
+}
+
+.qcf_txt_item /*.ob_gridNavigationSeparator*/
+{
+font-family: Calibri;
+font-size: 11px;
+/*	color:#429BBF;
+font-weight: normal;
+text-decoration:none;
+cursor: default;
+padding-left: 2px;
+padding-right: 2px;*/
+}
+	
+.qcf_totalcredits
+{
+    font-family: Calibri;
+    font-size: 15px;
+  
+    
+}

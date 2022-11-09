@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+ 
+  
+  <siteMapNode url="~/Default.aspx" title="Root"  description="Root"  roles="Admin, SalesAdvisor" >
+    <siteMapNode url="~/Portal/Account/Default.aspx" title="Admin Home" description="Admin page" roles="Admin">
+      <siteMapNode url="~/Portal/Account/ManageEmailTemplates.aspx" title="Manage Email Templates"  description="Manage Email Templates" roles="Admin"/>
+      <!--<siteMapNode url="~/Portal/Account/ChangePassword.aspx" title="Change Your Password"  description="Change Your Password" roles="Admin"/>-->
+      <!--<siteMapNode url="~/Portal/Account/TestEmail.aspx" title="Test Email"  description="Test an email" roles="Admin"/>-->
+    </siteMapNode>
+
+    <!-- Learner App Portal  : Start -->
+    <siteMapNode title="My Account" url="~/Portal/SalesAdvisor/Account.aspx"  description="Account"  roles="SalesAdvisor">
+      <siteMapNode url="~/Portal/SalesAdvisor/ChangePassword.aspx" title="Change Password"  description="Change Password" />
+    </siteMapNode>
+
+   
+    <!--<siteMapNode url="~/Portal/ApplicationMan/Forms.aspx" title="Manage Forms"  description="Manage Forms"  >
+    </siteMapNode>-->
+    
+    <siteMapNode url="~/Portal/Account/ManageUsers.aspx"  title="Manage Roles/Users"  description="Admin - Manage Users"  roles="Admin" >
+      <!--<siteMapNode url="~/Portal/Account/AddUser.aspx" title="Add User"  description="Admin - Adding a new user" />
+      <siteMapNode url="~/Portal/Account/AddUserLearner.aspx" title="Add Learner User"  description="Admin - Adding a new learner user only" />
+      <siteMapNode url="~/Portal/Account/AddUserAssessor.aspx" title="Add Assessor User"  description="Admin - Adding a new Assessor user only" />-->
+      <siteMapNode url="~/Portal/Account/AddSaleAdvisor.aspx" title="Add Sale Advisor User"  description="Admin - Adding a new sale advisor user only" />
+      <siteMapNode url="~/Portal/Account/DeleteUser.aspx" title="Delete User"  description="Admin - delete a user" />
+      <siteMapNode url="~/Portal/Account/UsersAndRoles.aspx" title="Users - Roles"  description="Manage Users - Roles" />
+      <siteMapNode url="~/Portal/Account/ManageRoles.aspx" title="Manage Roles"  description="Manage Roles" />
+      <siteMapNode url="~/Portal/Account/ChangeUsersPassword.aspx" title="Change Users Password"  description="Change Users Password" />   
+    </siteMapNode>
+
+    <siteMapNode url="~/Portal/Learners/Contact.aspx" title="Contact us" description=" "  roles="Learner"  >
+    </siteMapNode>
+
+    <!-- ################################################################################## -->
+    <!--<siteMapNode url="~/Portal/ApplicationMan/Default.aspx" title="(old) Manage Applications"  description="Manage Applications"  >
+    </siteMapNode>-->
+   
+    <siteMapNode title="Manage Applications" url="~/Portal/SalesAdvisor/ManageApplications.aspx"  description="Manage Applications"  roles="SalesAdvisor">
+    </siteMapNode>
+    <!--<siteMapNode title="Assign Form" url="~/Portal/SalesAdvisor/AssignForm.aspx"  description="Assign Form"  roles="SalesAdvisor">
+    </siteMapNode>-->
+    
+     <siteMapNode title="Manage Invites" url="~/Portal/SalesAdvisor/Invites.aspx"  description="Manage App Portal Invites"  roles="SalesAdvisor">
+      <siteMapNode url="~/Portal/SalesAdvisor/CreateInvite.aspx" title="Create Invite"  description="Create App Portal Invite" roles="SalesAdvisor"  />
+    </siteMapNode>
+    
+    
+    <!--<siteMapNode title="App Invites" url="~/Portal/SalesAdvisor/ManageInvites.aspx"  description="All Access Skills App Portal Invites"  roles="SalesAdvisor">
+      <siteMapNode url="~/Portal/SalesAdvisor/Invites.aspx" title="All Invites"  description="Manage Invites - Invites"  roles="SalesAdvisor" />
+      <siteMapNode url="~/Portal/SalesAdvisor/CreateInvite.aspx" title="Create Invite"  description="Manage Invites - Create Invite" roles="SalesAdvisor"  />
+    </siteMapNode>-->
+
+    
+    <!--<siteMapNode title="Manage Applications" url="~/Portal/SalesAdvisor/ApplicationHome.aspx"  description="Applications"  roles="SalesAdvisor">
+      <siteMapNode url="~/Portal/SalesAdvisor/ManageApplications.aspx" title="Manage Applications"  description="Manage Applications" />
+    </siteMapNode>-->
+
+
+    <!--<siteMapNode url="~/About.aspx" title="About The Application" description="About The Application">-->
+      <!-- <siteMapNode url="~/about-eisk.aspx" title="About This Project" description="About This Project"/>  -->
+    <!--</siteMapNode>-->
+    
+    
+
+    <!--<siteMapNode url="~/Portal/Account/ManageResources.aspx" title="Manage Library"  description="Manage Library"  >
+      <siteMapNode url="~/Portal/Account/DocumentsLibrary.aspx" title="View Documents Library" description="View Documents Library" />
+    </siteMapNode>--> 
+    
+    <!-- ***************************************** -->
+    <!--<siteMapNode url="~/Portal/Assessors/Default.aspx" title="Assessor Home" description=" "  roles="Assessor"  >
+      <siteMapNode url="~/Portal/Assessors/MyAccount.aspx" title="My Account"  description="Access to personal information, change password." />
+       <siteMapNode url="~/Portal/Assessors/MyMessages.aspx" title="My Messages"  description="Communication messages between learners and the office" />       
+      <siteMapNode url="~/Portal/Assessors/SSMyLearners.aspx" title="My Learners"  description="My Learners" />       
+      --><!--<siteMapNode url="~/Portal/Assessors/LearnerManageUnits.aspx" title="Manage Units"  description="Manage Learners Units" />--><!--
+      <siteMapNode url="~/Portal/Assessors/SSLearnerNotes.aspx" title="Learner Notes"  description="View/Add learner notes " />
+      <siteMapNode url="~/Portal/Assessors/SSLearnerCourseSummary.aspx" title="Course Specifications"  description="View learner course specifications and print off course documents" />
+      <siteMapNode url="~/Portal/Assessors/SSLearnerCourseActivity.aspx" title="Course Activity"  description="Manage Course Activities" />
+      <siteMapNode url="~/Portal/Assessors/PortfolioHistory.aspx" title="Portfolio History"  description="View Portfolio History" />
+      <siteMapNode url="~/Portal/Assessors/ViewLearnerMatrix.aspx" title="View Matrix"  description="View Learner Matrix" />
+      <siteMapNode url="~/Portal/Assessors/ViewLearnerMatrixSummary.aspx" title="Matrix Summary"  description="View Learner Matrix Summary" />
+      <siteMapNode url="~/Portal/Assessors/SSLearnerSignedOffSummary.aspx" title="Portfolio"  description="Learner Signed Off Summary" />
+    </siteMapNode>       
+    <siteMapNode url="~/Portal/Assessors/DocumentsLibrary.aspx" title="Documents Library" description=""  roles="Assessor"  >
+    </siteMapNode>-->
+
+    <!-- ***************************************** -->
+    <!--<siteMapNode url="~/Portal/Learners/Default.aspx" title="Home" description=" "  roles="Learner"  >
+      <siteMapNode url="~/Portal/Learners/MyAccount.aspx" title="My Account"  description="Access to personal information, change password." />
+      <siteMapNode url="~/Portal/Learners/MyMessages.aspx" title="My Messages"  description="Communication messages between me and my assessor" />
+      <siteMapNode url="~/Portal/Learners/MyCourseSummary.aspx" title="My Course Summary"  description="My Course Summary" />
+      --><!--<siteMapNode url="~/Portal/Learners/MyCourse.aspx" title="My Course"  description="My Course details" />--><!--
+      <siteMapNode url="~/Portal/Learners/ViewActivityHistory.aspx" title="My Course Activity"  description="My Course Activity" />
+      <siteMapNode url="~/Portal/Learners/MyCourseDocuments.aspx" title="My Course Documents"  description="My Course Documents" />
+      --><!--<siteMapNode url="~/Portal/Learners/MyCourseDetails.aspx" title="My Courses"  description="Details about my courses" />--><!--
+      --><!--<siteMapNode url="~/Portal/Learners/MyAssessor.aspx" title="My Assigned Assessor"  description="My assigned assessor" />--><!--
+      --><!--<siteMapNode url="~/Portal/Learners/LearnerSubmitActivity.aspx" title="Submit Activity"  description="Submit activities" />
+      <siteMapNode url="~/Portal/Learners/LearnerPendingActivity.aspx" title="Pending Activities"  description="Pending activities" />--><!--
+      --><!--    <siteMapNode url="~/Portal/Assessors/LearnerManageQCFTracking.aspx" title="Manage QCF KPI Tracking"  description="Manage QCF KPI Tracking activities" />
+      <siteMapNode url="~/Portal/Assessors/LearnerPendingQCF.aspx" title="Pending QCF KPI Activities"  description="Pending QCF KPI Tracking activities" /> --><!--
+      --><!--<siteMapNode url="~/Portal/Learners/LearnerManageUnits.aspx" title="Manage Units"  description="Manage My Course" />--><!--
+      <siteMapNode url="~/Portal/Learners/Portfolio.aspx" title="My Portfolio"  description="My Portfolio" />
+    </siteMapNode> 
+    <siteMapNode url="~/Portal/Learners/DocumentsLibrary.aspx" title="Documents Library" description=""  roles="Learner"  >
+    </siteMapNode>
+    <siteMapNode url="~/Portal/Learners/ResourceLibrary.aspx" title="Resource Library" description=""  roles="Learner"  >
+    </siteMapNode>-->
+   
+    <!--Learner App Portal End -->
+
+
+    <!-- ################################################################################## -->
+    
+    <!-- ***************************************** -->
+    <!--<siteMapNode url="~/Portal/Ivs/Default.aspx" title="Iv Home" description=" "  roles="Iv"  >
+      <siteMapNode url="~/Portal/Ivs/MyAccount.aspx" title="My Account"  description="Access to personal information, change password." />
+      <siteMapNode url="~/Portal/Ivs/MyMessages.aspx" title="My Messages"  description="Communication messages between learners and the office" />
+      <siteMapNode url="~/Portal/Ivs/MyAssessorsLearners.aspx" title="My Assessor's Learners"  description="My Assessor's Learners" />
+      <siteMapNode url="~/Portal/Ivs/MyLearners.aspx" title="My Assigned Learners"  description="My Learners" />
+      <siteMapNode url="~/Portal/Ivs/LearnerSubmitActivity.aspx" title="Submit Activity"  description="Submit activities" />
+      <siteMapNode url="~/Portal/Ivs/LearnerPendingActivity.aspx" title="Pending Activities"  description="Pending activities" />
+      <siteMapNode url="~/Portal/Ivs/LearnerManageQCFTracking.aspx" title="Manage QCF Tracking"  description="Manage QCF Tracking activities" />
+      <siteMapNode url="~/Portal/Ivs/LearnerPendingQCF.aspx" title="Pending QCF Activities"  description="Pending QCF Tracking activities" />
+      <siteMapNode url="~/Portal/Ivs/LearnerManageUnits.aspx" title="Manage Units"  description="Manage Learners Units" />
+    </siteMapNode>
+
+    <siteMapNode url="~/Portal/Ivs/Resources.aspx" title="Resources" description=""  roles="Iv"  >
+    </siteMapNode>
+    --><!-- ***************************************** --><!--
+     <siteMapNode url="~/Portal/Employees/Default.aspx" title="Employee Home" description=" "  roles="Employee"  >
+      <siteMapNode url="~/Portal/Employees/MyAccount.aspx" title="My Account"  description="Access to personal information, change password." />
+      <siteMapNode url="~/Portal/Employees/MyMessages.aspx" title="My Messages"  description="Communication messages between asssessors, learners and the office staff" />
+     </siteMapNode>
+    <siteMapNode url="~/Portal/Employees/Resources.aspx" title="Resources" description=""  roles="Employee"  >
+    </siteMapNode>-->
+    <!-- ***************************************** -->
+    <!--<siteMapNode url="~/Portal/Manager/Default.aspx" title="Manager Home" description=" "  roles="Manager"  >
+      <siteMapNode url="~/Portal/Manager/MyAccount.aspx" title="My Account"  description="Access to personal information, change password." />
+      <siteMapNode url="~/Portal/Manager/ManagePolicies.aspx" title="Manage Policies"  description="Manage Policies Documents" />
+    </siteMapNode>
+    <siteMapNode url="~/Portal/Manager/Policies.aspx" title="Policies" description=""  roles="Manager"  >
+    </siteMapNode>-->
+
+    <!-- ***************************************** -->
+    <!--<siteMapNode url="~/Portal/Guest/MyAccount.aspx" title="My Account" description="My Account"  roles="Guest" >
+         --><!--  <siteMapNode url="~/Portal/Account/AddUser.aspx" title="Add User"  description="Admin - Adding a new user" />
+        <siteMapNode url="~/Portal/Account/DeleteUser.aspx" title="Delete User"  description="Admin - delete a user" />
+        <siteMapNode url="~/Portal/Account/UsersAndRoles.aspx" title="Users - Roles"  description="xxxxxxx" />
+        <siteMapNode url="~/Portal/Account/ManageRoles.aspx" title="Manage Roles"  description="xxxxxxx" />
+        <siteMapNode url="~/Portal/Account/ChangePassword.aspx" title="Change Your Password"  description="xxxxxxx" />
+        <siteMapNode url="~/Portal/Account/ChangeUsersPassword.aspx" title="Change Users Password"  description="xxxxxxx" />
+       --><!-- --><!-- <siteMapNode url="~/employee/view/1.aspx" title="Details Page"  roles="Admin" description="Details Page" />--><!--
+    </siteMapNode>-->
+    <!-- ***************************************** -->
+    <!--<siteMapNode url="~/Portal/Assessors/Feedback.aspx" title="Feedback" description="Tell us your opinion and suggestions"  roles="Assessor,Iv, Admin" >
+         </siteMapNode>-->
+   
+      <!-- ***************************************** -->
+    </siteMapNode>
+</siteMap>

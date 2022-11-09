@@ -1,0 +1,88 @@
+﻿using DSP.BAL;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Portal_SalesAdvisor_AssignForm : System.Web.UI.Page
+{
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        if (Membership.GetUser() != null)
+        {
+            lbl_UserId.Text = DSP.BAL.DBL.GetUser_UserId(Membership.GetUser().UserName).ToString();
+        }
+
+        if (!Page.IsPostBack)
+        {
+            ddlCourseList.DataBind();
+            ListItem li = new ListItem();
+            li.Text = "Any";
+            li.Value = "-1";
+            li.Selected = true;
+            ddlCourseList.Items.Add(li);
+            ddlCourseList.SelectedIndex = ddlCourseList.Items.Count - 1;
+            if (Roles.IsUserInRole(Membership.GetUser().UserName, "Admin") == true)
+            {
+
+            }
+            else if (Roles.IsUserInRole(Membership.GetUser().UserName, "SalesAdvisor") == true)
+            {
+                txtUserId.Text = lbl_UserId.Text;
+            }
+            if (Roles.IsUserInRole(Membership.GetUser().UserName, "Admin") == true)
+            {
+            }
+
+        }
+        if (Page.IsPostBack)
+        {
+
+        }
+    }
+
+
+
+    protected void btnReset_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnAssign_Click(object sender, EventArgs e)
+    {
+        //assign forms to learner here
+
+        string learnerId = ddlUserList.SelectedValue;
+        string courseId = ddlCourseList.SelectedValue;
+        string combined_FormId = ddlForms.SelectedValue;
+
+        string[] split = combined_FormId.Split('|');
+        string formId = split[0];
+        string templateFilePath = split[1]; //to be get by form id
+        string fileName = "";
+
+        byte[] fileBytes;        
+        using (FileStream fileStream = new FileStream(templateFilePath, FileMode.Open, FileAccess.Read))
+        {
+            fileName = fileStream.Name;
+            using (BinaryReader reader = new BinaryReader(fileStream))
+            {
+                fileBytes = reader.ReadBytes((int)fileStream.Length);
+            }
+        }
+
+
+        string iQuery = "INSERT INTO [dbo].[SS_AssignedForms] ([AF_Id_Form] ,[AF_Id_Learner] ,[AF_Id_Course] ,[AF_CreatedDate] ,[AF_CreatedByUser] ,[AF_CreatedByUsername] ,[AF_IsSentToLearner] ,[AF_SentToLearnerDate] ,[AF_FileName] ,[AF_FileContentType] ,[AF_TempFile] ,[AF_FinalFile])";
+        iQuery += "VALUES(" + formId + ", " + learnerId + ", " + courseId + ", GETDATE(), " + lbl_UserId.Text + ", '" + Membership.GetUser().UserName + "', 1, GETDATE()), '" + fileName + "', 'application/vnd.ms-word', " + fileBytes + ", " + fileBytes + ")";
+    }
+}

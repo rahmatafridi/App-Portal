@@ -1,0 +1,58 @@
+/*
+ * CSS for QCF Builder on the Portal
+ *
+ * Copyright 2012, AUTHOR: Yasar Qayyum  
+ */
+
+/* Layout helpers
+----------------------------------*/
+ 
+
+ 
+
+/***** TABS STUFF *******/
+/* ajax__tab_yuitabview-theme theme (img/yui/sprite.png) */
+.ajax__tab_yuitabview-theme .ajax__tab_header 
+{
+    font-family:Calibri,sans-serif;
+    font-size:small;
+    border-bottom:solid 1px #fcfdfd; /*C1CDCD*/
+    /*border-bottom:solid 5px #2647a0;*/
+}
+.ajax__tab_yuitabview-theme .ajax__tab_header .ajax__tab_outer 
+{
+    background: #fcfdfd;
+    margin:0px 0.16em 0px 0px;
+    padding:2px 2px 2px 2px;
+    vertical-align:bottom;
+    border:solid 1px #a3a3a3;
+    border-bottom-width:1px;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background-color: #edf5ff;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color:#000;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_active .ajax__tab_outer
+{
+    background-color: #90B8E7; /*C1CDCD*/
+    /*#2647a0;*/
+}
+.ajax__tab_yuitabview-theme .ajax__tab_body 
+{
+    font-family:Calibri, Sans-Serif;
+    font-size:10pt;
+    padding:0.5em 0.5em;
+    background-color:#edf5ff;    
+    border:solid 1px #A2B5CD;
+    border-top-width:1px;
+}

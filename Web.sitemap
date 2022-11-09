@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+ 
+  
+  <siteMapNode url="~/Default.aspx" title=""  description="Root" >
+    <siteMapNode url="~/Portal/Default.aspx" title="Access to Portal" description="Portal ">
+    </siteMapNode>
+
+     <siteMapNode url="~/About.aspx?" title="What is Portal?" description="What is Portal?">
+      <siteMapNode url="~/about-global.aspx" title="Global Access"  description="Access it on the Internet" />
+      <siteMapNode url="~/about-shared.aspx" title="Shared Resources"  description="A Common place for all to access resources" />
+     </siteMapNode>
+         
+    
+  </siteMapNode>
+
+</siteMap>

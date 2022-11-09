@@ -1,0 +1,50 @@
+﻿<%@ Page Title="Reset Password" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true"
+    CodeFile="testmail.aspx.cs" Inherits="testmail" %>
+
+
+    <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContainer" runat="server">
+   
+    <script src="/App_Resources/js/jgrowl/jquery.jgrowl.js" type="text/javascript"></script>
+    <script src="/App_Resources/js/jgrowl/jquery.ui.all.js" type="text/javascript"></script>
+    <link href="/App_Resources/js/jgrowl/jquery.jgrowl.css" rel="stylesheet" type="text/css" />
+
+
+</asp:Content>
+
+
+
+
+<asp:Content ID="cHeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content ID="cBodyContent" runat="server" ContentPlaceHolderID="BodyContent">
+    <h2>
+        test mail 
+    </h2>
+    <p>
+        Please enter your email and we will send your new password.
+     </p>
+   
+    <fieldset class="login">
+        <legend>Account Information</legend>
+        <p>
+            <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">message?</asp:Label>
+            <asp:TextBox ID="UserName" runat="server" CssClass="textEntry" Width="300px"></asp:TextBox>
+                 </p>
+            <p><asp:Label ID="InvalidCredentialsMessage" runat="server" ForeColor="Red" Text="<b>Your email is invalid.<br/> Please try again.</b>" Visible="False"></asp:Label> </p>
+         
+        
+           <asp:LinkButton ID="LoginButton" SkinID="LinkButton" runat="server" OnClick="ResetPassword_Click"   Text="Send"  />
+          
+    </fieldset>
+   
+    <br />
+        Click   
+        <a id="lnkLogin" 
+            class="forget" 
+            href="Login.aspx" 
+             >here</a> to login.
+        <br />
+
+
+             
+</asp:Content>
